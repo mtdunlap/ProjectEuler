@@ -15,7 +15,7 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than 1000.</returns>
     public static ulong Compute(ulong upperBound)
     {
-        return SumOfMultiplesLessThanOneThousand(3, upperBound) + SumOfMultiplesLessThanOneThousand(5, upperBound) - SumOfMultiplesLessThanOneThousand(15, upperBound);
+        return SumOfMultiplesLessThanUpperBound(3, upperBound) + SumOfMultiplesLessThanUpperBound(5, upperBound) - SumOfMultiplesLessThanUpperBound(15, upperBound);
     }
 
     /// <summary>
@@ -24,7 +24,7 @@ public static class SumOfMultiples
     /// <param name="multiple">The base multiple to use when computing the sum.</param>
     /// <param name="upperBound">The upperBound of values to sum.</param>
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of <paramref name="multiple"/> less than <paramref name="upperBound"/>.</returns>
-    private static ulong SumOfMultiplesLessThanOneThousand(ulong multiple, ulong upperBound)
+    private static ulong SumOfMultiplesLessThanUpperBound(ulong multiple, ulong upperBound)
     {
         ulong sum = 0ul;
         for (ulong i = 0; i < upperBound; i++)
