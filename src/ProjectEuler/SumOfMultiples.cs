@@ -26,12 +26,7 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of <paramref name="multiple"/> less than <paramref name="upperBound"/>.</returns>
     private static ulong SumOfMultiplesLessThanUpperBound(ulong multiple, ulong upperBound)
     {
-        ulong sum = 0ul;
-        ulong iterations = upperBound / multiple + (upperBound % multiple == 0ul ? 0ul : 1ul);
-        for (ulong i = 1; i < iterations; i++)
-        {
-            sum += i;
-        }
-        return sum * multiple;
+        var iterations = upperBound / multiple + (upperBound % multiple == 0ul ? 0ul : 1ul);
+        return multiple * iterations * (iterations - 1ul) / 2ul;
     }
 }
