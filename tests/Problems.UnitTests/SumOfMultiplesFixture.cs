@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectEuler.UnitTests;
+namespace ProjectEuler.Problems.UnitTests;
 
 [TestFixture]
 internal sealed class SumOfMultiplesFixture

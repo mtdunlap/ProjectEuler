@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectEuler;
+namespace ProjectEuler.Problems;
 
 /// <summary>
 /// Static class for computing the sum of two multiples less than an upper bound.
