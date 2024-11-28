@@ -14,6 +14,9 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than 1000.</returns>
     public static ulong Compute()
     {
-        return 233168;
+        const ulong sumOfMultiplesOfThreeLessThanOneThousand = 166833ul;
+        const ulong sumOfMultiplesOfFiveLessThanOneThousand = 99500ul;
+        const ulong sumOfMultiplesOfFifteenLessThanOneThousand = 33165ul;
+        return sumOfMultiplesOfThreeLessThanOneThousand + sumOfMultiplesOfFiveLessThanOneThousand - sumOfMultiplesOfFifteenLessThanOneThousand;
     }
 }
