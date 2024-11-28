@@ -27,13 +27,11 @@ public static class SumOfMultiples
     private static ulong SumOfMultiplesLessThanUpperBound(ulong multiple, ulong upperBound)
     {
         ulong sum = 0ul;
-        for (ulong i = 0; i < upperBound; i++)
+        ulong iterations = upperBound / multiple + (upperBound % multiple == 0ul ? 0ul : 1ul);
+        for (ulong i = 1; i < iterations; i++)
         {
-            if (i % multiple == 0)
-            {
-                sum += i;
-            }
+            sum += i;
         }
-        return sum;
+        return sum * multiple;
     }
 }
