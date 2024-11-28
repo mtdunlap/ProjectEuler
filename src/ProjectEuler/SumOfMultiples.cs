@@ -1,3 +1,5 @@
+using System;
+
 namespace ProjectEuler;
 
 /// <summary>
@@ -15,6 +17,7 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than 1000.</returns>
     public static ulong Compute(ulong upperBound)
     {
+        ArgumentOutOfRangeException.ThrowIfZero(upperBound, nameof(upperBound));
         return SumOfMultiplesLessThanUpperBound(3, upperBound) + SumOfMultiplesLessThanUpperBound(5, upperBound) - SumOfMultiplesLessThanUpperBound(15, upperBound);
     }
 
