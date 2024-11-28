@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ProjectEuler.UnitTests;
@@ -5,6 +6,15 @@ namespace ProjectEuler.UnitTests;
 [TestFixture]
 internal sealed class SumOfMultiplesFixture
 {
+    [Test]
+    public void Should_throw_an_argument_out_of_range_exception_When_computing_with_an_upper_bound_of_zero()
+    {
+        Assert.That(() =>
+        {
+            _ = SumOfMultiples.Compute(0ul);
+        }, Throws.TypeOf<ArgumentOutOfRangeException>());
+    }
+
     private static IEnumerable<TestCaseData> Source()
     {
         yield return new TestCaseData(10ul)
