@@ -29,6 +29,9 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of <paramref name="multiple"/> less than <paramref name="upperBound"/>.</returns>
     private static ulong SumOfMultiplesLessThanUpperBound(ulong multiple, ulong upperBound)
     {
+        ArgumentOutOfRangeException.ThrowIfZero(multiple, nameof(multiple));
+        ArgumentOutOfRangeException.ThrowIfZero(upperBound, nameof(upperBound));
+
         var iterations = upperBound / multiple + (upperBound % multiple == 0ul ? 0ul : 1ul);
         return multiple * iterations * (iterations - 1ul) / 2ul;
     }
