@@ -14,9 +14,57 @@ public static class SumOfMultiples
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than 1000.</returns>
     public static ulong Compute()
     {
-        const ulong sumOfMultiplesOfThreeLessThanOneThousand = 166833ul;
-        const ulong sumOfMultiplesOfFiveLessThanOneThousand = 99500ul;
-        const ulong sumOfMultiplesOfFifteenLessThanOneThousand = 33165ul;
-        return sumOfMultiplesOfThreeLessThanOneThousand + sumOfMultiplesOfFiveLessThanOneThousand - sumOfMultiplesOfFifteenLessThanOneThousand;
+        return SumOfMultiplesOfThreeLessThanOneThousand() + SumOfMultiplesOfFiveLessThanOneThousand() - SumOfMultiplesOfFifteenLessThanOneThousand();
+    }
+
+    /// <summary>
+    /// Computes the sum of multiples of 3 less than 1000.
+    /// </summary>
+    /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 less than 1000.</returns>
+    private static ulong SumOfMultiplesOfThreeLessThanOneThousand()
+    {
+        ulong sum = 0ul;
+        for (ulong i = 0; i < 1000; i++)
+        {
+            if (i % 3 == 0)
+            {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    /// <summary>
+    /// Computes the sum of multiples of 5 less than 1000.
+    /// </summary>
+    /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 5 less than 1000.</returns>
+    private static ulong SumOfMultiplesOfFiveLessThanOneThousand()
+    {
+        ulong sum = 0ul;
+        for (ulong i = 0; i < 1000; i++)
+        {
+            if (i % 5 == 0)
+            {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    /// <summary>
+    /// Computes the sum of multiples of 15 less than 1000.
+    /// </summary>
+    /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 15 less than 1000.</returns>
+    private static ulong SumOfMultiplesOfFifteenLessThanOneThousand()
+    {
+        ulong sum = 0ul;
+        for (ulong i = 0; i < 1000; i++)
+        {
+            if (i % 15 == 0)
+            {
+                sum += i;
+            }
+        }
+        return sum;
     }
 }
