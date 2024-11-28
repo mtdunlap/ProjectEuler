@@ -14,7 +14,8 @@ public static class SumOfMultiples
     /// Computes the sum of multiples of 3 and 5 less than <paramref name="upperBound"/>.
     /// </summary>
     /// <param name="upperBound">The upperBound of values to sum.</param>
-    /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than 1000.</returns>
+    /// <returns>A <see cref="ulong"/> representing the sum of all multiples of 3 and 5 less than <paramref name="upperBound"/>.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="upperBound"/> is zero.</exception>
     public static ulong Compute(ulong upperBound)
     {
         ArgumentOutOfRangeException.ThrowIfZero(upperBound, nameof(upperBound));
@@ -27,6 +28,7 @@ public static class SumOfMultiples
     /// <param name="multiple">The base multiple to use when computing the sum.</param>
     /// <param name="upperBound">The upperBound of values to sum.</param>
     /// <returns>A <see cref="ulong"/> representing the sum of all multiples of <paramref name="multiple"/> less than <paramref name="upperBound"/>.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown if <paramref name="multiple"/> is zero or <paramref name="upperBound"/> is zero.</exception>
     private static ulong SumOfMultiplesLessThanUpperBound(ulong multiple, ulong upperBound)
     {
         ArgumentOutOfRangeException.ThrowIfZero(multiple, nameof(multiple));
